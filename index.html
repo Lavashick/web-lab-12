@@ -2,13 +2,23 @@
 <html>
 
 <head>
-    <title>Lab_12</title>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="utf-8">
+    <title>My first Vue app</title>
+    <script src="https://unpkg.com/vue"></script>
 </head>
 
 <body>
-    <script src="script.js"></script>
+    <div id="app">
+        {{ message }}
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!'
+            }
+        })
+    </script>
 </body>
 
 </html>
