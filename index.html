@@ -4,21 +4,47 @@
 <head>
     <title>My first Vue app</title>
     <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div id="app">
-        {{ message }}
+        <div class="pre">
+            <h1>Список студентов</h1>
+            <h3>Работу выполнила студент группы 201-321 - Александра Сметанина</h3>
+            <p>Описание работы: подключение через CDN упращает нам работу, требуется лишь подключить скрипт vue.js. создаем наш объект app через конструктор vue (var app = new vue{}). Используем директивы v-model, v-bind, v-on, v-if, v-else для создания динамики.</p> 
+            <h2>Форма</h2>
+            
+            <form action="#">
+                <label for="sname">Фамилия</label>
+                <input
+                  type="text"
+                  id="sname"
+                  v-bind:placeholder="placeholderSurname"
+                  v-model="inputValueSurname"
+                />
+                <label for="fname">Имя</label>
+                <input
+                  type="text"
+                  id="fname"
+                  v-bind:placeholder="placeholderName"
+                  v-model="inputValueName"
+                />
+                <div class="counter">Количество знаков: {{inputValueSurname.length + inputValueName.length}}</div>
+                <button
+                  v-bind:disabled="isButtonDisabled"
+                >
+                  добавить
+                </button>
+            </form>
+
+        </div>    
     </div>
 
-    <script>
-        var app = new Vue({
-            el: '#app',
-            data: {
-                message: 'Hello Vue!'
-            }
-        })
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
