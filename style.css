@@ -61,3 +61,22 @@ button:disabled {
   border-color: #ddd !important;
   color: #999 !important;
 }
+ul {
+  display: flex;
+  max-width: 320px;
+  margin: auto;
+  background-color: #fff;
+  list-style-type: none;
+  padding: 20px;
+  margin-top:20px;
+  border-radius: 10px;
+}
+.empty {
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px auto 0 auto;
+  background-color: #fff;
+  max-width: 320px;
+  display: flex;
+  justify-content: center;
+}

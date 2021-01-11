@@ -35,11 +35,22 @@
                 />
                 <div class="counter">Количество знаков: {{inputValueSurname.length + inputValueName.length}}</div>
                 <button
-                  v-bind:disabled="isButtonDisabled"
-                >
+                  v-bind:disabled="isDisabled"
+                  v-on:click="addNewNote"  
+                  >
                   добавить
                 </button>
             </form>
+
+            <div v-if="notes.length === 0" class="empty">тут пусто...</div>
+            <div v-else>
+              <ul class="list">
+                <li class="list-item" v-for="(n, i) in notes">
+                  {{i + 1}}- {{n}}
+                </li>
+              </ul>
+            </div>
+            
 
         </div>    
     </div>
